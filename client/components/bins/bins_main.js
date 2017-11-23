@@ -1,11 +1,14 @@
 import React, { Component } from 'react';
 import { withTracker } from 'meteor/react-meteor-data';
 import { Bins } from '../../../imports/collections/bins';
+import BinsEditor from './bins_editor';
 
 class BinsMain extends Component {
   render() {
     return (
-      <div>BinsMain</div>
+      <div>
+        <BinsEditor bin={this.props.bin} />
+      </div>
     );
   }
 }
