@@ -7,3 +7,5 @@ class BinsMain extends Component {
     );
   }
 }
+
+export default BinsMain;
