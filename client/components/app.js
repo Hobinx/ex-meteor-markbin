@@ -8,14 +8,14 @@ import { Switch } from 'react-router';
 
 export default (props) => {
   return (
-    <div>
-      <Header />
       <Router>
-        <Switch>
-          <Route exact path='/' component={BinsList} />
-          <Route path='/bins' component={BinsMain} />
-        </Switch>
+        <div>
+          <Header />
+          <Switch>
+            <Route exact path='/' component={BinsList} />
+            <Route path='/bins/:binId' component={BinsMain} />
+          </Switch>
+        </div>
       </Router>
-    </div>
   );
 };
