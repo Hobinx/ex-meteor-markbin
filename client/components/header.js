@@ -1,12 +1,16 @@
 import React, { Component } from 'react';
 import Accounts from './accounts';
+import { withRouter } from 'react-router';
 import { Link } from 'react-router-dom';
+
 
 class Header extends Component {
   onBinCreate(event) {
     event.preventDefault();
 
-    Meteor.call('bins.insert');
+    Meteor.call('bins.insert', (err, binId) => {
+      this.props.history.push(`/bins/${binId}`);
+    });
   }
 
   render() {
@@ -30,4 +34,4 @@ class Header extends Component {
   }
 }
 
-export default Header;
+export default withRouter(Header);
